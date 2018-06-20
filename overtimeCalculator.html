@@ -1,0 +1,103 @@
+<html>
+<body>
+<script type="text/javascript">
+
+/*******************************************************************************
+*   PROGRAM NAME:  overtimeCalculator.html
+*   PROGRAM PURPOSE: Calculate gross pay with overtime
+*   AUTHOR:  <INSERT YOUR NAME>
+*   DATE: <INSERT THE DATE>
+*******************************************************************************/
+
+
+/*******************************************************************************
+*   Section 1:  DECLARE VARIABLES
+* 
+*   PLEASE EXAMINE THE CODE IN THIS SECTION FOR UNDERSTANDING.  
+*   THIS SECTION IS NOT COMPLETED!  YOU MUST ADD ALL VARIABLES THAT ARE USED IN
+*   THIS PROGRAM THAT HAVE NOT BEEN DECLARED!
+*   
+*   HINT:  THERE ARE FOUR MISSING VARIABLES.  ALSO, DO NOT FORGET TO ADD 
+*          COMMENTS TO DESCRIBE THE CODE.
+*******************************************************************************/
+// Declare all variables 
+var name;             // Name of the user
+var hoursWorked;      // Number of hours worked
+var wageRate;         // Wage rate paid
+
+
+
+/*******************************************************************************
+*   Section 2:  USER INPUT 
+* 
+*   PLEASE EXAMINE THE CODE IN THIS SECTION FOR UNDERSTANDING.  THIS SECTION
+*   HAS BEEN COMPLETED FOR YOU!
+*******************************************************************************/
+
+// The following code prompts the user to enter their hours worked and assigns
+// that value to the variable hoursWorked.
+name = prompt("Please enter your first and last name:");
+
+
+// The following code prints a welcome message for the user.
+document.write("<h2>Welcome to the overtime calculator!</h2>");
+
+// The following code prompts the user to enter their hours worked and assigns
+// that value to the variable hoursWorked.
+hoursWorked = prompt("Enter the number of hours worked:");
+
+//  The following code converts the value the user entered for hourseWorked, 
+//  which is a string and converts hoursWorked to a decimal number to calculate
+//  wages earned later in the program.
+hoursWorked = parseFloat(hoursWorked);
+
+// The following code prompts the user to enter their wage rate and assigns
+// that value to the variable wageRate.
+wageRate = prompt("Enter the wage rate:");
+
+//  The following code converts the value the user entered for wageRate, 
+//  which is a string and converts wageRate to a decimal number to calculate
+//  wages earned later in the program.
+wageRate = parseFloat(wageRate);
+
+/*******************************************************************************
+*   Section 3:  CALCULATE THE GROSS PAY
+* 
+*   USE THE PSEUDOCODE (ENGLISH DESCRIPTION) IN THE ASSIGNMENT DESCRIPTION 
+*   TO COMPLETE THIS SECTION IN THE PROGRAM.  YOU MUST CONVERT THE PSEUDOCODE 
+*   TO JAVASCRIPT!!!  ALSO, DO NOT FORGET TO ADD COMMENTS TO DESCRIBE THE CODE.
+*******************************************************************************/
+
+//this code calculates hours work and hourly wage.
+var grossPay;
+var regularPay;
+var overtimeHours;
+var overtimeWage;
+
+if ( hoursWorked > 40){
+    overtimeHours = hoursWorked - 40;
+    overtimeWage = overtimeHours * wageRate * 1.5;
+    regularPay = 40 * wageRate;
+    grossPay = regularPay + overtimeWage;
+} else {
+    grossPay = hoursWorked * wageRate;
+}
+
+
+/*******************************************************************************
+*   Section 4:  DISPAY GROSS PAY AND CLOSING REMARK TO THE USER
+* 
+*   PLEASE EXAMINE THE CODE IN THIS SECTION FOR UNDERSTANDING.  THIS SECTION
+*   HAS BEEN COMPLETED FOR YOU!
+* 
+*   HINT:  The toFixed(2) method is used to ensure that only two digits after 
+*          the decimal place will be displayed.
+*******************************************************************************/
+
+document.write("Your Gross pay is: $" + grossPay.toFixed(2) + "<br />");
+
+document.write("<b><br>Thank you " + name + "!</b>");
+
+</script>
+</body>
+</html>
